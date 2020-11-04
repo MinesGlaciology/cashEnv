@@ -31,7 +31,8 @@ stdenv.mkDerivation rec {
         pyproj
     	tables
         pip
-        jupyter
+        notebook
+        #jupyter
         #boto3
         cython
         pandas
