@@ -14,13 +14,11 @@ stdenv.mkDerivation rec {
     source $stdenv/setup; ln-s $env $out
   '';
 
-  buildInputs = [ python36 git geos proj mkl hdf5
+  buildInputs = [ python36 git geos proj hdf5
     (python36.buildEnv.override {
       ignoreCollisions = true;
       extraLibs = with python36Packages; [
-        (numpy.override {blas = mkl ;})
 	    h5py
-        mkl-service
 	    rasterio
         scipy
         matplotlib
