@@ -66,7 +66,7 @@ for filename in tqdm(glob.glob(input_files)):
     grid_write(resample_tif(filename))
 
 
-input_files2 = "../april20/IODEM3*.tif"
+input_files2 = "../april21/IODEM3*.tif"
 
 for filename in tqdm(glob.glob(input_files2)):
     grid_write(resample_tif(filename))
