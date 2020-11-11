@@ -1,4 +1,11 @@
-with import <nixpkgs> {};
+{
+  current ? import (builtins.fetchTarball {
+             url = "https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz";
+             sha256 = "1wg61h4gndm3vcprdcg7rc4s1v3jkm5xd7lw8r2f67w502y94gcy";
+             }) {}
+}:
+
+with current;
 
 stdenv.mkDerivation rec {
   name = "env" ;
@@ -26,7 +33,8 @@ stdenv.mkDerivation rec {
         pillow
         pyproj
         pip
-        jupyter
+        notebook
+        #jupyter
         boto3
         cython
         geopandas
