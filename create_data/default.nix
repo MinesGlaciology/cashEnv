@@ -29,14 +29,12 @@ stdenv.mkDerivation rec {
         matplotlib
         joblib
         tqdm
-        geopandas
         pillow
         pyproj
         pip
         notebook
         boto3
         cython
-        #geopandas
         pandas
         gdal
         click
