@@ -38,10 +38,11 @@ mv *tif.xml xml
 ...repeat the same for april21:
 
 ```
-cd april21
+cd ../april21
 python nsidc-download_IODEM3.2012april21.py
 mkdir xml
 mv *tif.xml xml
+cd ..
 ```
 
 Tile the dataset
@@ -58,35 +59,20 @@ Do a sanity check
 -----------------
 
 1. Run `ls -1 output | wc -l`
-2. Verify that the number of tiles is 265,453
+2. Verify that the number of tiles is 316,968
 3. Run `ls output | head`
 4. Verify that the first entries match the expected hashes:
 
+0000219354bc7855415c0c3535b03d48755af162ebef907cbd0916241784984b.tif
+00004cdb5ede3b05f3611ce8377aa1b15820827ed045c3b9450fcf2907b9bfba.tif
+00004ea57a242c5a82ef77f5d54f815f0cd67428fa6785bc5ed93a324c2a8fd6.tif
+00004f4afeda7821095d46500a14ab54564d447ddf21e6baf7dd36ad57d038d3.tif
+00007cf6544d5449009cc6c6fe62ce523b2c84547d4a56d2127a942ff2c062ab.tif
+000081f03f7f83c48e9dbdf1a9e0da25fafd7ed167d5a2dd8e23e1eb224d4d5c.tif
+00009cc5a9e9ebdb1c3a49fd9ef99623b2e24fda79daf4475f836791cc7a9fb3.tif
+00009e85fbf07ab215fc90cd3d0bb8c9940f13e821c77e399ed6cc45c8c84bfa.tif
+000133ec5fae7562af0ea63d66db261c61b8e1ea7b0ac2fd0165cd0f7fa186cb.tif
+00017a1e4b4ae6e6f33a14719a32cfdd7cc1d9999417139744298563b00cef07.tif
 ...
 
 Congrats! You've downloaded and created the tile dataset.
-
-Notes
------
-
-There is a second nix file, 'prov.nix', that is pinned to the specific
-version of packages used at the time of this README creation. It should
-work without errors in the future regardless of library updates. It can
-be accessed by running nix-shell with it as the argument:
-
-`nix-shell prov.nix`
-
-Cut instructions that aren't needed (I think)
----------------------------------------------
-
-Clean up
---------
-
-Combine the datasets:
-
-```
-mkdir all_tiles_april
-mv april20/output/* all_tiles_april
-mv april21/output/* all_tiles_april
-```
-

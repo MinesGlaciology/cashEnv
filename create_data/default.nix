@@ -34,10 +34,9 @@ stdenv.mkDerivation rec {
         pyproj
         pip
         notebook
-        #jupyter
         boto3
         cython
-        geopandas
+        #geopandas
         pandas
         gdal
         click
