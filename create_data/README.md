@@ -31,8 +31,6 @@ https://nsidc.org/support/faq/what-options-are-available-bulk-downloading-data-h
 ```
 cd april20
 python nsidc-download_IODEM3.2012april20.py
-mkdir xml
-mv *tif.xml xml
 ```
 
 ...repeat the same for april21:
@@ -40,8 +38,6 @@ mv *tif.xml xml
 ```
 cd ../april21
 python nsidc-download_IODEM3.2012april21.py
-mkdir xml
-mv *tif.xml xml
 cd ..
 ```
 
@@ -53,7 +49,7 @@ run the tiling code:
 
 `mkdir output`
 
-`python Tile_April20i_21.py`
+`python Tile_April20_21.py`
 
 Do a sanity check
 -----------------
