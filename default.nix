@@ -18,6 +18,9 @@ stdenv.mkDerivation rec {
       ignoreCollisions = true;
       extraLibs = with python38Packages; [
         numpy
+        numba
+        #tensorflow
+        #keras
         docopt
         Rtree
         scipy
