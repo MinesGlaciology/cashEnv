@@ -1,7 +1,7 @@
 {
   current ? import (builtins.fetchTarball {
-             url = "https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz";
-             sha256 = "0182ys095dfx02vl2a20j1hz92dx3mfgz2a6fhn31bqlp1wa8hlq";
+             url = "https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz";
+             sha256 = "0mhqhq21y5vrr1f30qd2bvydv4bbbslvyzclhw0kdxmkgg3z4c92";
              }) {}
 }:
 
@@ -13,10 +13,10 @@ stdenv.mkDerivation rec {
     source $stdenv/setup; ln-s $env $out
   '';
 
-  buildInputs = [ python36 git geos proj curl wget
-    (python36.buildEnv.override {
+  buildInputs = [ python37 git geos proj curl wget
+    (python37.buildEnv.override {
       ignoreCollisions = true;
-      extraLibs = with python36Packages; [
+      extraLibs = with python37Packages; [
         numpy
         numba
         tensorflow-tensorboard
@@ -44,6 +44,6 @@ stdenv.mkDerivation rec {
 
 shellHook = ''
     alias pip="PIP_PREFIX='$(pwd)/_build/pip_packages' \pip"
-    export PYTHONPATH="$(pwd)/_build/pip_packages/lib/python3.6/site-packages:$PYTHONPATH"
+    export PYTHONPATH="$(pwd)/_build/pip_packages/lib/python3.7/site-packages:$PYTHONPATH"
     unset SOURCE_DATE_EPOCH
 '';}
