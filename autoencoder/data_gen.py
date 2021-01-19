@@ -24,7 +24,7 @@ xtrain = xtrain.as_matrix()[list(set(r_[0:60000:1]) -
                                       45733,46918,48443,49895,56860,58161))),:]
 
 # Get empirical noise
-orgin = h5py.File('./data/GLAH01_033_1102_028_0090_1_02_0001.H5')
+orgin = h5py.File('../data/GLAH01_033_1102_028_0090_1_02_0001.H5')
 dataset40 = orgin['Data_40HZ']
 valid_bool = dataset40['Waveform']['Characteristics']['i_waveformType'][:]==1
 signals = np.max(dataset40['Waveform']['RecWaveform']['r_rng_wf'][:][valid_bool],axis=1) > 0.1
@@ -33,7 +33,7 @@ noise_pool=noise_sub[(noise_sub <.06)*(noise_sub > -0.06)].ravel()
 
 # Get empirical scaling factors
 my_sigs = dataset40['Waveform']['RecWaveform']['r_rng_wf'][:][valid_bool][signals,:]
-widthDist = np.load('./data/orbit_width_counts-idx.npy')
+widthDist = np.load('../data/orbit_width_counts-idx.npy')
 
 # widths 5 to 99
 maxes = []
