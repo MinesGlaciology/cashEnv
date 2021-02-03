@@ -19,6 +19,7 @@ stdenv.mkDerivation rec {
       extraLibs = with python38Packages; [
         numpy
         numba
+        ipywidgets
         #tensorflow
         #keras
         docopt
