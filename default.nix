@@ -22,6 +22,7 @@ stdenv.mkDerivation rec {
         ipywidgets
         #tensorflow
         #keras
+        scikitlearn
         docopt
         Rtree
         scipy
