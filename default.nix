@@ -23,6 +23,7 @@ stdenv.mkDerivation rec {
         #tensorflow
         #keras
         scikitlearn
+        pytorch
         docopt
         Rtree
         scipy
